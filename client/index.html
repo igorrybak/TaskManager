@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <title>Spalah Home Work</title>
+    <title>Task manager</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container wrapper">
-      <div class="row">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Tasks</h3>
-          </div>
-          <div class="panel-body">
-          <form>
-            <div class="form-group">
-              <input class="form-control" type="text" id="task-name"></input>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Tasks</h3>
+                </div>
+                <div class="panel-body">
+                    <!-- <form> -->
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="task-name"></input>
+                    </div>
+                    <div class="actions">
+                        <button id="add-task-btn" class="btn btn-default" onclick="addTask()">Save task</button>
+                    </div>
+                    <!-- </form> -->
+                    <div id="tasks-list"></div>
+                </div>
             </div>
-            <div class="actions">
-              <button id="add-task-btn" class="btn btn-default">Save task</button>
-            </div>
-          </form>
-          <div id="tasks-list"></div>
-           Tasks list goes here
-          </div>
         </div>
-      </div>
     </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  <script type="text/javascript" src="js/application.js"></script>
-  <script type="text/javascript" src="js/user.js"></script>
-  <script type="text/javascript">indexPage.init()</script>
-  </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
 </html>
