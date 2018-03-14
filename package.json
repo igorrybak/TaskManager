@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "client/js/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "mysql": "^2.15.0"
+  },
   "devDependencies": {},
   "scripts": {
     "start": "node server/server.js"
