@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="container wrapper">
+    <div class="container wrapper" id="project-block">
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -20,13 +20,19 @@
                         <input class="form-control" type="text" id="task-name"></input>
                     </div>
                     <div class="actions">
-                        <button id="add-task-btn" class="btn btn-default" onclick="addTask()">Save task</button>
+                        <button id="add-task-btn" class="btn btn-default" onclick="addTask()">Add task</button>
                         <br /><br />
                     </div>
                     <div id="tasks-list"></div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="block-list"></div>
+
+    <div class="text-center" id="add-project-button">
+        <button id="add-project-btn" onclick="addProject()">Add TODO List</button>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script type="text/javascript" src="src/index.js"></script>
