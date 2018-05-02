@@ -10,12 +10,12 @@ function addTask() {
 };
 
 function enterListener() {
-    taskName.addEventListener('keypress', function(event) {
-        console.log(event.key);
-        if (event.key == "13") {
-            addTask();
-        };
-    });
+    function handler(event) {
+        console.log(event.keyCode);
+    };
+
+    taskName.addEventListener('keydown', handler);
+    // taskName.removeEventListener('keydown', handler);
 };
 
 function addProject() {
