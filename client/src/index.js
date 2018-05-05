@@ -1,5 +1,6 @@
 var taskName = document.getElementById('task-name');
-var taskList = document.getElementById('tasks-list');
+var taskList = document.getElementById('task-list');
+var projectList = document.getElementById('project-list');
 
 function addTask() {
     if (taskName.value) {
@@ -8,21 +9,20 @@ function addTask() {
         taskName.focus();
     };
 };
-
-function enterListener() {
-    function handler(event) {
-        console.log(event.keyCode);
-    };
-
-    taskName.addEventListener('keydown', handler);
-    // taskName.removeEventListener('keydown', handler);
-};
+// TODO
+// function enterListener() {
+//     function handler(event) {
+//         console.log(event.keyCode);
+//     };
+//
+//     taskName.addEventListener('keydown', handler);
+// };
 
 function addProject() {
-    var projectName = document.getElementById('project-name').value;
-    var projectList = document.getElementById('project-list');
+    var projectName = "First project";
+    //TODO var projectName = document.getElementById('project-name').value;
     if (projectName) {
         projectList.innerHTML += projectName; //insert html-template
         document.getElementById('task-name').value = "";
     };
-}
+};
