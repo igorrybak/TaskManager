@@ -5,3 +5,7 @@
 .has-error {
     background-color: yellow;
 }
+
+.input-small {
+    width: 500px;
+}

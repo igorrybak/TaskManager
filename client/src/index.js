@@ -22,7 +22,8 @@ function addProject() {
     var projectName = "First project";
     //TODO var projectName = document.getElementById('project-name').value;
     if (projectName) {
-        projectList.innerHTML += projectName; //insert html-template
+        console.log($().add("<div>HELLO</div>"));
+        projectList.innerHTML += $().add("<div id='test-div'>HELLO</div>"); //insert html-template
         document.getElementById('task-name').value = "";
     };
 };

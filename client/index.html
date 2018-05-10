@@ -11,7 +11,7 @@
 <body>
     <div class="container wrapper">
         <div id="project-list">
-            <!-- <div class="row">
+            <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Tasks</h3>
@@ -27,16 +27,22 @@
                         <div id="task-list"></div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 
-    <div id="block-list"></div>
+    <div class="container panel-body">
+        <div>
+            <input class="form-control input-small" type="text" id="project-name" placeholder="TODO list"></input>
+        </div>
+        <div class="action form-group" id="add-project-button">
+            <button class="btn btn-default" id="add-project-btn" onclick="addProject()">Add TODO List</button>
+        </div>
 
-    <div class="text-center" id="add-project-button">
-        <button id="add-project-btn" onclick="addProject()">Add TODO List</button>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="src/index.js"></script>
 </body>
 
