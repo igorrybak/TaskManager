@@ -1,11 +1,12 @@
 const path = require('path');
 
 module.exports = {
-  entry: {
-    index: './client/src/index.js'
-  },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'client/dist')
-  }
+    entry: {
+        index: './client/src/index.js'
+    },
+    output: {
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'client/dist'),
+        library: "index"
+    }
 }

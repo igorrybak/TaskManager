@@ -1,29 +1,31 @@
-var taskName = document.getElementById('task-name');
-var taskList = document.getElementById('task-list');
-var projectList = document.getElementById('project-list');
+var addTask = function() {
+    var taskName = document.getElementById('task-name');
+    var taskList = document.getElementById('task-list');
 
-function addTask() {
     if (taskName.value) {
         taskList.innerHTML += taskName.value + "<br />" + "<hr />";
         taskName.value = "";
         taskName.focus();
     };
 };
+
 // TODO
 // function enterListener() {
 //     function handler(event) {
 //         console.log(event.keyCode);
 //     };
-//
 //     taskName.addEventListener('keydown', handler);
 // };
 
-function addProject() {
-    var projectName = "First project";
-    //TODO var projectName = document.getElementById('project-name').value;
+var addProject = function() {
+    var projectList = document.getElementById('project-list');
+    var projectName = document.getElementById('project-name');
+
     if (projectName) {
-        console.log($().add("<div>HELLO</div>"));
         projectList.innerHTML += $().add("<div id='test-div'>HELLO</div>"); //insert html-template
         document.getElementById('task-name').value = "";
     };
 };
+
+exports.addTask = addTask;
+exports.addProject = addProject;

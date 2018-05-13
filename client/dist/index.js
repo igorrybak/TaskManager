@@ -1,3 +1,4 @@
+var index =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -67,12 +68,37 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-function addTask() {
-    var taskName = document.getElementById('task-name').value;
-    var taskList = document.getElementById('tasks-list');
+var addTask = function() {
+    var taskName = document.getElementById('task-name');
+    var taskList = document.getElementById('task-list');
 
-    taskList.innerHTML += taskName + "<br>" + "<hr>";
+    if (taskName.value) {
+        taskList.innerHTML += taskName.value + "<br />" + "<hr />";
+        taskName.value = "";
+        taskName.focus();
+    };
 };
+
+// TODO
+// function enterListener() {
+//     function handler(event) {
+//         console.log(event.keyCode);
+//     };
+//     taskName.addEventListener('keydown', handler);
+// };
+
+var addProject = function() {
+    var projectList = document.getElementById('project-list');
+    var projectName = document.getElementById('project-name');
+
+    if (projectName) {
+        projectList.innerHTML += $().add("<div id='test-div'>HELLO</div>"); //insert html-template
+        document.getElementById('task-name').value = "";
+    };
+};
+
+exports.addTask = addTask;
+exports.addProject = addProject;
 
 
 /***/ })
