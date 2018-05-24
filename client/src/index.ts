@@ -1,34 +1,28 @@
 import * as $ from 'jquery';
 
-var addTask = (): void => {
-    let taskName: HTMLElement = document.getElementById('task-name');
-    let taskList: HTMLElement = document.getElementById('task-list');
-    let taskNameValue: string = (<HTMLInputElement>document.getElementById('task-name')).value;
+const addTask = (): void => {
+  let taskName: HTMLElement = document.getElementById('task-name');
+  let taskList: HTMLElement = document.getElementById('task-list');
+  let taskNameValue: string = (<HTMLInputElement>document.getElementById('task-name')).value;
 
-    if (taskNameValue) {
-        taskList.innerHTML += taskNameValue + "<br />" + "<hr />";
-        console.log(taskNameValue);
-        taskNameValue = "";
-        taskName.focus();
-    };
+  if (taskNameValue) {
+    taskList.innerHTML += taskNameValue + "<br />" + "<hr />";
+    (taskName as HTMLTextAreaElement).value = "";
+  };
+  taskName.focus();
 };
 
-// TODO
-// function enterListener() {
-//     function handler(event) {
-//         console.log(event.keyCode);
-//     };
-//     taskName.addEventListener('keydown', handler);
-// };
+const addProject = (): void => {
+  let projectName: HTMLElement = document.getElementById('project-name');
+  let projectList: HTMLElement = document.getElementById('project-list');
+  let projectNameValue: string = (<HTMLInputElement>document.getElementById('project-name')).value;
+  let projectBlock = `<div id='test-div'>${projectNameValue}</div>    <link rel="import" href="project.html">`;
 
-var addProject = (): void => {
-    let projectName: HTMLElement = document.getElementById('project-name');
-    let projectList: HTMLElement = document.getElementById('project-list');
-
-    if (projectName) {
-        projectList.innerHTML += $().add("<div id='test-div'>HELLO</div>"); //insert html-template
-        document.getElementById('task-name').nodeValue = "";
-    };
+  if (projectNameValue) {
+    projectList.innerHTML += $("input").before(projectBlock); //insert html-template
+    (projectName as HTMLTextAreaElement).value = "";
+  };
+  projectName.focus();
 };
 
 export { addTask };

@@ -18,7 +18,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <input id="task-name" class="form-control" type="text"></input>
+                            <input id="task-name" class="form-control" type="text" placeholder="Task name"</input>
                         </div>
                         <div class="actions">
                             <button id="add-task-btn" class="btn btn-default" onclick="index.addTask()">Add task</button>
@@ -32,10 +32,10 @@
     </div>
 
     <div class="container panel-body">
-        <div>
-            <input id="project-name" class="form-control input-small" type="text" placeholder="TODO list"></input>
+        <div class="form-group">
+            <input id="project-name" class="form-control input-small" type="text" placeholder="TODO-list name"></input>
         </div>
-        <div id="add-project-button" class="action form-group">
+        <div id="add-project-button" class="action">
             <button class="btn btn-default" id="add-project-btn" onclick="index.addProject()">Add TODO List</button>
         </div>
 
