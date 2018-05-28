@@ -2,7 +2,7 @@ let projectTemplate = `
 <div class="row">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Tasks</h3>
+            <h3 class="panel-title" id="todo-header"></h3>
         </div>
         <div class="panel-body">
             <div class="form-group">
