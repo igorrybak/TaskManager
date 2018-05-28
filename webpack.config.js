@@ -3,7 +3,8 @@ const path = require('path');
 module.exports = {
     mode: 'production',
     entry: {
-        index: path.resolve(__dirname, 'client/src/index.ts')
+        "index": "./client/src/index.ts",
+        "projectTemplate": "./client/src/projectTemplate.ts"
     },
     output: {
         filename: '[name].js',
