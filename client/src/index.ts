@@ -1,37 +1,33 @@
 import * as $ from 'jquery';
-import * as projectTemplate from './projectTemplate';
-let projectTempl = projectTemplate.projectTemplate;
+import * as htmlTemplate from './projectTemplate';
 
 const addTask = (): void => {
-    let taskName: HTMLElement = document.getElementById('task-name');
-    let taskList: HTMLElement = document.getElementById('task-list');
-    let taskNameValue: string = (<HTMLInputElement>document.getElementById('task-name')).value;
-
-    if (taskNameValue) {
-        taskList.innerHTML += taskNameValue + "<br />" + "<hr />";
-        (taskName as HTMLTextAreaElement).value = "";
-    };
-    taskName.focus();
+  let taskName: HTMLElement = document.getElementById('task-name');
+  let taskList: HTMLElement = document.getElementById('task-list');
+  let taskNameValue: string = (<HTMLInputElement>document.getElementById('task-name')).value;
+  if (taskNameValue) {
+    taskList.innerHTML += taskNameValue + "<br />" + "<hr />";
+    (taskName as HTMLTextAreaElement).value = "";
+  };
+  taskName.focus();
 };
 
 const addProject = (): void => {
-    let projectName: HTMLElement = document.getElementById('project-name');
-    let projectList: HTMLElement = document.getElementById('project-list');
-    let projectNameValue: string = (<HTMLInputElement>document.getElementById('project-name')).value;
-    let projectBlock = `<div id='test-div'>${projectNameValue}</div>`;
+  let projectNameID: string = 'todo-header';
+  let projectName: HTMLElement = document.getElementById('project-name');
+  let projectList: HTMLElement = document.getElementById('project-list');
+  let projectNameValue = (<HTMLInputElement>document.getElementById('project-name')).value;
 
-// вставить название в строку
-alert(projectTempl[projectTempl.indexOf("todo-header") + 13]);
-
-    if (projectNameValue) {
-        // projectList.innerHTML += $("input").before(projectBlock); //insert html-template
-        projectList.innerHTML += projectTempl;
-        (projectName as HTMLTextAreaElement).value = "";
-
-
-    };
-    projectName.focus();
+  if (projectNameValue) {
+    let newProject: htmlTemplate.projectTemplate = new htmlTemplate.projectTemplate(htmlTemplate.htmlTemplate, projectNameValue);
+    // console.log(newProject.projName);
+    projectList.innerHTML += newProject.htmlTemplate;
+    (projectName as HTMLTextAreaElement).value = "";
+  };
+  projectName.focus();
 };
 
 export { addTask };
 export { addProject };
+
+// projectList.innerHTML += $("input").before(projectBlock); //insert html-template
