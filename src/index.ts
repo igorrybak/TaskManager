@@ -1,5 +1,5 @@
 import * as $ from 'jquery';
-import * as htmlTemplate from './projectTemplate';
+// import * as htmlTemplate from './projectTemplate';
 
 const addTask = (): void => {
   let taskName: HTMLElement = document.getElementById('task-name');
@@ -19,9 +19,9 @@ const addProject = (): void => {
   let projectNameValue = (<HTMLInputElement>document.getElementById('project-name')).value;
 
   if (projectNameValue) {
-    let newProject: htmlTemplate.projectTemplate = new htmlTemplate.projectTemplate(htmlTemplate.htmlTemplate, projectNameValue);
+    // let newProject: htmlTemplate.projectTemplate = new htmlTemplate.projectTemplate(htmlTemplate.htmlTemplate, projectNameValue);
     // console.log(newProject.projName);
-    projectList.innerHTML += newProject.htmlTemplate;
+    projectList.innerHTML += projectNameValue;
     (projectName as HTMLTextAreaElement).value = "";
   };
   projectName.focus();

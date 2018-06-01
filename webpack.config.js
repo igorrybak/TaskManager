@@ -1,14 +1,18 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const PATHS = {
+  source: path.join(__dirname, 'src'),
+  distr: path.join(__dirname, 'dist')
+};
+
 
 module.exports = {
     mode: 'production',
-    entry: {
-        "index": "./client/src/index.ts",
-        "projectTemplate": "./client/src/projectTemplate.ts"
-    },
+    entry: PATHS.source + '/index.ts',
     output: {
+        path: PATHS.distr,
         filename: '[name].js',
-        path: path.resolve(__dirname, 'client/dist'),
         library: "index"
     },
     resolve: {
@@ -21,8 +25,9 @@ module.exports = {
             loader: 'awesome-typescript-loader'
         }]
     },
-    watch: true,
-    watchOptions: {
-        aggregateTimeout: 100
-    }
+    plugins: [
+      new HtmlWebpackPlugin({
+        title: "Task manager"
+      })
+    ]
 };
