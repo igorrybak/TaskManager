@@ -11,7 +11,7 @@ const addTask = (): void => {
   };
   taskName.focus();
 };
-
+alert("1111");
 const addProject = (): void => {
   let projectNameID: string = 'todo-header';
   let projectName: HTMLElement = document.getElementById('project-name');
