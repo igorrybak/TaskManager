@@ -1,33 +1,36 @@
 import * as $ from 'jquery';
-// import * as htmlTemplate from './projectTemplate';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
-const addTask = (): void => {
+//////////////////__test__////////////////////////
+const testElement: any = <h1>Hello, world!</h1>;
+
+ReactDOM.render(
+  testElement,
+  document.getElementById('project-list')
+);
+//////////////////__test__////////////////////////
+
+export const addTask = (): void => {
   let taskName: HTMLElement = document.getElementById('task-name');
   let taskList: HTMLElement = document.getElementById('task-list');
-  let taskNameValue: string = (<HTMLInputElement>document.getElementById('task-name')).value;
+  let taskNameValue: string = (document.getElementById('task-name') as HTMLTextAreaElement).value;
   if (taskNameValue) {
     taskList.innerHTML += taskNameValue + "<br />" + "<hr />";
     (taskName as HTMLTextAreaElement).value = "";
   };
   taskName.focus();
 };
-alert("1111");
-const addProject = (): void => {
+
+export const addProject = (): void => {
   let projectNameID: string = 'todo-header';
   let projectName: HTMLElement = document.getElementById('project-name');
   let projectList: HTMLElement = document.getElementById('project-list');
-  let projectNameValue = (<HTMLInputElement>document.getElementById('project-name')).value;
+  let projectNameValue = (document.getElementById('project-name') as HTMLTextAreaElement).value;
 
   if (projectNameValue) {
-    // let newProject: htmlTemplate.projectTemplate = new htmlTemplate.projectTemplate(htmlTemplate.htmlTemplate, projectNameValue);
-    // console.log(newProject.projName);
     projectList.innerHTML += projectNameValue;
     (projectName as HTMLTextAreaElement).value = "";
   };
   projectName.focus();
 };
-
-export { addTask };
-export { addProject };
-
-// projectList.innerHTML += $("input").before(projectBlock); //insert html-template
