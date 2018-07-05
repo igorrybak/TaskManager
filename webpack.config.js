@@ -1,5 +1,4 @@
 const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
   source: path.join(__dirname, 'src'),
@@ -11,8 +10,7 @@ module.exports = {
   entry: PATHS.source + '/index.tsx',
   output: {
     path: PATHS.distr,
-    filename: '[name].js',
-    library: "index"
+    filename: '[name].js'
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
