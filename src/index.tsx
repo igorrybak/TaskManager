@@ -9,17 +9,17 @@ import { TaskTemplate } from '../components/task';
 export { React, ReactDOM }
 
 ReactDOM.render(
-  MainPage,
+  <MainPage />,
   document.getElementById('root')
 );
 
 ReactDOM.render(
-  ProjectTemplate,
+  <ProjectTemplate />,
   document.getElementById('project-list')
 );
 
 ReactDOM.render(
-  TaskTemplate,
+  <TaskTemplate />,
   document.getElementById('task-list')
 );
 
